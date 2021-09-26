@@ -1,0 +1,5 @@
+<form (ngSubmit)="onSubmit()" #employeeForm="ngForm">
+    
+    
+    <button type="submit" class="btn btn-success btn-sm" [disabled]="!employeeForm.form.valid">Submit</button>
+</form>
