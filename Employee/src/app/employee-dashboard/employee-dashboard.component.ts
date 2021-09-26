@@ -12,6 +12,7 @@ import { EmployeeDataService } from '../_services/employee-data.service'
 })
 export class EmployeeDashboardComponent implements OnInit {
   employees: EmployeeDTO[];
+  employee: EmployeeDTO;
   constructor(public employeeService: EmployeeDataService, private router: Router) { }
 
   ngOnInit() {
@@ -24,7 +25,7 @@ export class EmployeeDashboardComponent implements OnInit {
   }
 
   updateEmployee(employee){
-
+    this.employeeService.selectedEmployee = employee;
   }
 
 }

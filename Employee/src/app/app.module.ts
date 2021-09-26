@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { EmployeeDashboardComponent } from './employee-dashboard/employee-dashboard.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CreateEmployeeComponent } from './create-employee/create-employee.component';
+import { EditEmployeeComponent } from './edit-employee/edit-employee.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EmployeeDashboardComponent,
-    CreateEmployeeComponent
+    CreateEmployeeComponent,
+    EditEmployeeComponent
   ],
   imports: [
     BrowserModule,

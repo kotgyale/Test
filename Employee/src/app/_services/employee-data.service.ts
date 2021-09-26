@@ -9,12 +9,14 @@ export class EmployeeDataService {
 
   employees: EmployeeDTO[] = [{name: 'Ravi',
     address: 'Pune',
-    email: 'Ravi123@gmail.com ',
+    email: 'ravi123@gmail.com ',
     dob: '29-05-1994',
     gender: 'Male',
     doj: '29-11-2021',
     married: 'Single',
     contact: '7276278721'}];
+
+  selectedEmployee: EmployeeDTO;
   constructor(private router: Router) { }
 
   getEmployees(){
@@ -28,7 +30,13 @@ export class EmployeeDataService {
   }
 
   updateEmployee(employee){
-    
+    this.employees.forEach(emp => {
+      if(emp.email === employee.email){
+        emp = employee;
+      }
+    });
+    alert("Employee Updated Successfully");
+    this.router.navigate(["/employee-list"]);
   }
 
   deleteEmployee(employee){
