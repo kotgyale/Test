@@ -25,7 +25,7 @@
                     <td>{{employee.married}}</td>
                     <td>{{employee.contact}}</td>
                     <td>
-                        <button class="btn btn-info">Edit</button><button class="btn btn-danger ml-lg-5" (click)="deleteEmployee(employee)">Delete</button>
+                        <a [routerLink]="['/create-employee/', employee.email, 'edit']" class="btn btn-info" (click)="updateEmployee(employee)">Edit</a><button class="btn btn-danger ml-lg-5" (click)="deleteEmployee(employee)">Delete</button>
                     </td>
                 </tr>
             </tbody>

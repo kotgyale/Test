@@ -22,4 +22,8 @@ export class EmployeeDashboardComponent implements OnInit {
     alert("Employee Deleted successfully")
   }
 
+  updateEmployee(employee){
+    
+  }
+
 }

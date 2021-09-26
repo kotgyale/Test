@@ -9,6 +9,7 @@ const routes: Routes = [
   path: '',
   component: EmployeeDashboardComponent,
 },
+{ path: 'create-employee/:empEmail/edit', component: CreateEmployeeComponent },
 {
   path: 'create-employee',
   component: CreateEmployeeComponent,
