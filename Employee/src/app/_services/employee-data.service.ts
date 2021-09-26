@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { EmployeeDTO } from '../_models/employee.dto'
 @Injectable({
@@ -14,7 +15,7 @@ export class EmployeeDataService {
     doj: '29-11-2021',
     married: 'Single',
     contact: '7276278721'}];
-  constructor() { }
+  constructor(private router: Router) { }
 
   getEmployees(){
     return this.employees;
@@ -22,6 +23,8 @@ export class EmployeeDataService {
 
   addEmployee(employee: EmployeeDTO){
     this.employees.push(employee);
+    alert("Employee Created Successfully!!");
+    this.router.navigate(["/employee-list"]);
   }
 
   updateEmployee(employee){
@@ -29,6 +32,6 @@ export class EmployeeDataService {
   }
 
   deleteEmployee(employee){
-    return this.employees.filter(emp => emp.email !== employee.email);
+    return this.employees.splice(this.employees.findIndex(emp => emp.email === employee.email),1);
   }
 }

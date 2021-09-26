@@ -32,7 +32,7 @@
                         formControlName="email"
                         id="email" 
                         type="email" 
-                        class="form-control">
+                        class="form-control"> 
                     <div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
                         <div *ngIf="f.email.errors.required">Email is required.</div>
                         <div *ngIf="f.email.errors.pattern">Please Enter Valid Email</div>

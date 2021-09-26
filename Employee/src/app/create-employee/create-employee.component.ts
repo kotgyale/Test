@@ -12,6 +12,7 @@ export class CreateEmployeeComponent implements OnInit {
 
   form: FormGroup;
   employee: EmployeeDTO;
+  emailCheck: boolean = false;
   constructor(public employeeService: EmployeeDataService) { }
 
   ngOnInit(): void {
@@ -32,9 +33,17 @@ export class CreateEmployeeComponent implements OnInit {
   }
 
   submit(){
-    console.log(this.form.value);
     this.employee = this.form.value;
-    this.employeeService.addEmployee(this.employee);
+    this.employeeService.getEmployees().forEach(emp => {
+      if(emp.email === this.employee.email){
+        alert("This Email is allready present use another Email!!")
+      }
+      else{
+        this.employeeService.addEmployee(this.employee);
+      }
+    })
+    
+    
   }
 
 }
