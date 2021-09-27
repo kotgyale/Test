@@ -7,14 +7,7 @@ import { EmployeeDTO } from '../_models/employee.dto'
 })
 export class EmployeeDataService {
 
-  employees: EmployeeDTO[] = [{name: 'Ravi',
-    address: 'Pune',
-    email: 'ravi123@gmail.com ',
-    dob: '29-05-1994',
-    gender: 'Male',
-    doj: '29-11-2021',
-    married: 'Single',
-    contact: '7276278721'}];
+  employees: EmployeeDTO[] = [];
 
   selectedEmployee: EmployeeDTO;
   constructor(private router: Router) { }
@@ -24,7 +17,9 @@ export class EmployeeDataService {
   }
 
   addEmployee(employee: EmployeeDTO){
-    this.employees.push(employee);
+    let newEmployee = new EmployeeDTO();
+    newEmployee = employee;
+    this.employees.push(newEmployee);
     alert("Employee Created Successfully!!");
     this.router.navigate(["/employee-list"]);
   }
