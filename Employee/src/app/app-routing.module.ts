@@ -10,7 +10,7 @@ const routes: Routes = [
   path: '',
   component: EmployeeDashboardComponent,
 },
-{ path: 'edit-employee/:empEmail/edit', component: EditEmployeeComponent },
+{ path: 'edit-employee/edit', component: EditEmployeeComponent },
 {
   path: 'create-employee',
   component: CreateEmployeeComponent,
