@@ -2,9 +2,9 @@ export class EmployeeDTO{
     name: string;
     address: string;
     email: string;
-    dob: string;
+    dob: Date;
     gender: string;
-    doj: string;
+    doj: Date;
     married: string;
     contact: string;
 }
